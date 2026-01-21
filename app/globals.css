@@ -1,1 +1,22 @@
 @import "tailwindcss";
+
+@plugin "@tailwindcss/forms";
+
+@layer base {
+  a {
+    @apply text-orange-500;
+  }
+}
+
+@layer components {
+  .primary-btn {
+    @apply w-full bg-orange-500 text-white font-medium rounded-md text-center hover:bg-orange-400 transition-colors;
+  }
+  .no-spinner {
+    @apply appearance-none;
+  }
+  .no-spinner::-webkit-outer-spin-button,
+  .no-spinner::-webkit-inner-spin-button {
+    @apply appearance-none m-0;
+  }
+}
