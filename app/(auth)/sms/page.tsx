@@ -6,7 +6,7 @@ import { smsLogin } from "./actions";
 
 const initialState = {
   token: false,
-  phone: "(+1)",
+  phone: "",
 };
 
 export default function Login() {
@@ -24,20 +24,20 @@ export default function Login() {
               name="token"
               title="Verification code"
               type="number"
-              placeholder="Verification code"
+              placeholder=""
               required
-              errors={[]}
+              errors={state.formErrors}
               min={100000}
               max={999999}
             />
           ) : (
             <Input
               name="phone"
-              title="Phone number"
+              title="Phone number (+1)"
               type="text"
-              placeholder="Phone number"
+              placeholder=""
               required
-              errors={state.formErrors}
+              errors={state?.formErrors ?? []}
               defaultValue={`${state?.phone?.toString()} `}
             />
           )}
